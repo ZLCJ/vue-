@@ -20,11 +20,14 @@
       <div v-if="seller.supports" class="support-count">
         <span class="count">
           {{seller.supports.length}}个
-          <i class="icon-keyboard_arrow_right" ></i>
         </span>
+        <i class="icon-keyboard_arrow_right" ></i>
       </div>
     </div>
-    <div class="bulletin-wrapper"></div>
+    <div class="bulletin-wrapper">
+      <span class="bulletin-title"></span><span class="bulletin-text">{{seller.bulletin}}</span>
+      <i class="icon-keyboard_arrow_right"></i>
+    </div>
   </div>
 </template>
 
@@ -116,5 +119,29 @@
           margin-left: 2px
           line-height: 24px
           font-size: 10px
-
+    .bulletin-wrapper
+      height: 28px
+      line-height: 28px
+      padding: 0 22px 0 12px
+      white-space: nowrap
+      overflow: hidden
+      text-overflow: ellipsis
+      .bulletin-title
+        display: inline-block
+        vertical-align: top
+        margin-top: 7px
+        width: 22px
+        height: 12px
+        bg-image('bulletin')
+        background-size: 22px 12px
+        background-repeat: no-replace
+      .bulletin-text
+        vertical-align: top
+        font-size: 10px
+        margin: 0 4px
+      .icon-keyboard_arrow_right
+        position: relative
+        font-size: 10px
+        right: 12px
+        top: 8px
 </style>
